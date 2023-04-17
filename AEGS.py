@@ -167,7 +167,7 @@ def send_email(server, sender, names, schools, emails):
         except Exception as e:
             print()
             print(e)
-            print("******Error encountered at line {}: {} from {}******\n".format(i + 2, names[i], schools[i]))
+            print("******Error at row {}: {} from {}******\n".format(i + 2, names[i], schools[i]))
 
     server.quit()
     print("{} / {} Emails sent! Bye~".format(counter, len(emails)))

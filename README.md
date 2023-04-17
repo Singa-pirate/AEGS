@@ -37,7 +37,7 @@ This program serves two functions:
   Email sent to 4F5DA2
   
   {'not_even_an_email_gmail_com': (553, b'5.1.3 The recipient address <not_even_an_email_gmail_com> is not a valid\n5.1.3 RFC-5321 address. Learn more at\n5.1.3  https://support.google.com/mail/answer/6596 s22-20020a63dc16000000b00502f4c62fd3sm6801573pgg.33 - gsmtp')}
-  ******Error encountered at line 3: Person Whose Email Address is NOT an email from test1******
+  ******Error encountered at row 3: Person Whose Email Address is NOT an email from test1******
   
   Email sent to Person Whose Email Address is a wrong address
   Email sent to Very Very Very Very Looooooooooooooooong Name
