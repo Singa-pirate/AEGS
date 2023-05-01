@@ -15,8 +15,8 @@ def start_generate():
     try:
         Image.open(image_name)
 
-        name_font_size = 94
-        school_font_size = 42
+        name_font_size = 118
+        school_font_size = 53
         name_font = ImageFont.truetype("./fonts/PinyonScript-Regular.ttf", name_font_size)
         school_font = ImageFont.truetype("./fonts/march-rough.ttf", school_font_size)
 
@@ -40,7 +40,7 @@ def start_generate():
 
 
 def generate(image_name, name_font, school_font, names, schools):
-    W = 1600
+    W = 2000
     print("Generating certificates...")
 
     if not os.path.exists("./generated_certificates"):
@@ -56,8 +56,8 @@ def generate(image_name, name_font, school_font, names, schools):
 
         w_start_name = (W - w1) / 2
         w_start_school = (W - w2) / 2
-        h_start_name = 495
-        h_start_school = 647
+        h_start_name = 619
+        h_start_school = 809
         color = (30, 20, 20)
 
         image.text((w_start_name, h_start_name), name, font=name_font, fill=color)
