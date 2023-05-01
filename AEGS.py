@@ -15,9 +15,9 @@ def start_generate():
     try:
         Image.open(image_name)
 
-        name_font_size = 45
-        school_font_size = 34
-        name_font = ImageFont.truetype("./fonts/exmouth_.ttf", name_font_size)
+        name_font_size = 94
+        school_font_size = 42
+        name_font = ImageFont.truetype("./fonts/PinyonScript-Regular.ttf", name_font_size)
         school_font = ImageFont.truetype("./fonts/march-rough.ttf", school_font_size)
 
         print("\nPlease enter the file name of the excel sheet")
@@ -40,7 +40,7 @@ def start_generate():
 
 
 def generate(image_name, name_font, school_font, names, schools):
-    W = 1137
+    W = 1600
     print("Generating certificates...")
 
     if not os.path.exists("./generated_certificates"):
@@ -52,16 +52,16 @@ def generate(image_name, name_font, school_font, names, schools):
         output = Image.open(image_name)
         image = ImageDraw.Draw(output)
         _, _, w1, h1 = image.textbbox((0, 0), name, font=name_font)
-        _, _, w2, h2 = image.textbbox((0, 0), school, font=school_font)
+        _, _, w2, h2 = image.textbbox((0, 0), school.upper(), font=school_font)
 
         w_start_name = (W - w1) / 2
         w_start_school = (W - w2) / 2
-        h_start_name = 303
-        h_start_school = 395
+        h_start_name = 495
+        h_start_school = 647
         color = (30, 20, 20)
 
         image.text((w_start_name, h_start_name), name, font=name_font, fill=color)
-        image.text((w_start_school, h_start_school), school, font=school_font, fill=color)
+        image.text((w_start_school, h_start_school), school.upper(), font=school_font, fill=color)
 
         output.save("./generated_certificates/{}_{}.jpg".format(name, school))
     print("{} Certificates generated in the generated_certificates folder. Bye~".format(len(names)))
